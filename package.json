@@ -3,13 +3,33 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "generate:db": "drizzle-kit generate:pg",
+    "drizzle:migrate": "bun run src/db/migrate.ts",
+    "drizzle:drop": "drizzle-kit drop",
+    "drizzle:up": "drizzle-kit push:pg",
+    "drizzle:studio": "drizzle-kit studio --port 3100",
+    "drizzle:introspect":"drizzle-kit introspect:pg"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/bearer": "^1.0.0",
+    "@elysiajs/cors": "^1.0.0",
+    "@elysiajs/jwt": "^1.0.0",
+    "@grotto/logysia": "^0.1.1",
+    "@types/dotenv": "^8.2.0",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.2",
+    "elysia": "latest",
+    "lodash": "^4.17.21",
+    "postgres": "^3.4.3"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/bcrypt": "^5.0.2",
+    "@types/lodash": "^4.17.0",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.14",
+    "pg": "^8.11.3"
   },
   "module": "src/index.js"
 }
