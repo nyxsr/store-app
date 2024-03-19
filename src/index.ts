@@ -14,7 +14,14 @@ const app = new Elysia()
   .use(UserRoutes)
   .use(CategoryRoutes)
   .use(ProductRoutes)
+  .get("/", () => {
+    return {
+      message: "🦊 Elysia is running",
+    };
+  })
   .listen(3000);
+
+export type App = typeof app;
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`

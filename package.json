@@ -20,11 +20,11 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.2",
-    "elysia": "latest",
     "lodash": "^4.17.21",
     "postgres": "^3.4.3"
   },
   "devDependencies": {
+    "elysia": "latest",
     "@types/bcrypt": "^5.0.2",
     "@types/lodash": "^4.17.0",
     "bun-types": "latest",
